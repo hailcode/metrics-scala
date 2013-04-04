@@ -2,12 +2,12 @@ package com.yammer.metrics.scala.tests
 
 import org.junit.Test
 import com.simple.simplespec.Spec
-import com.yammer.metrics.Metrics
+import com.yammer.metrics.MetricRegistry
 import com.yammer.metrics.scala.Timer
 
 class TimerSpec extends Spec {
   class `A timer` {
-    val metric = Metrics.defaultRegistry().newTimer(classOf[TimerSpec], "timer")
+    val metric = new MetricRegistry().newTimer(classOf[TimerSpec], "timer")
     val timer = new Timer(metric)
 
     @Test def `updates the underlying metric` = {

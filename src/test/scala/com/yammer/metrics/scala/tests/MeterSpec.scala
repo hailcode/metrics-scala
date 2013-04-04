@@ -6,7 +6,7 @@ import com.yammer.metrics.scala.Meter
 
 class MeterSpec extends Spec {
   class `A meter` {
-    val metric = mock[com.yammer.metrics.core.Meter]
+    val metric = mock[com.yammer.metrics.Meter]
     val meter = new Meter(metric)
 
     @Test def `marks the underlying metric` = {

@@ -7,7 +7,7 @@ import java.io.File
 /**
  * A Scala façade class for Timer.
  */
-class Timer(metric: com.yammer.metrics.core.Timer) {
+class Timer(metric: com.yammer.metrics.Timer) {
   /**
    * Runs f, recording its duration, and returns the result of f.
    */
@@ -39,49 +39,9 @@ class Timer(metric: com.yammer.metrics.core.Timer) {
   def count = metric.getCount
 
   /**
-   * Clears all recorded durations.
-   */
-  def clear() { metric.clear() }
-
-  /**
-   * Returns the longest recorded duration.
-   */
-  def max = metric.getMax
-
-  /**
-   * Returns the shortest recorded duration.
-   */
-  def min = metric.getMin
-
-  /**
-   * Returns the arithmetic mean of all recorded durations.
-   */
-  def mean = metric.getMean
-
-  /**
-   * Returns the standard deviation of all recorded durations.
-   */
-  def stdDev = metric.getStdDev
-
-  /**
    * Returns a snapshot of the values in the timer's sample.
    */
   def snapshot = metric.getSnapshot
-
-  /**
-   * Returns the timer's rate unit.
-   */
-  def rateUnit = metric.getRateUnit
-
-  /**
-   * Returns the timer's duration unit.
-   */
-  def durationUnit = metric.getDurationUnit
-
-  /**
-   * Returns the type of events the timer is measuring.
-   */
-  def eventType = metric.getEventType
 
   /**
    * Returns the fifteen-minute rate of timings.

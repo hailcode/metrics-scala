@@ -3,7 +3,7 @@ package com.yammer.metrics.scala
 /**
  * A Scala façade class for Meter.
  */
-class Meter(metric: com.yammer.metrics.core.Meter) {
+class Meter(metric: com.yammer.metrics.Meter) {
 
   /**
    * Marks the occurrence of an event.
@@ -18,16 +18,6 @@ class Meter(metric: com.yammer.metrics.core.Meter) {
   def mark(count: Long) {
     metric.mark(count)
   }
-
-  /**
-   * Returns the meter's rate unit.
-   */
-  def rateUnit = metric.getRateUnit
-
-  /**
-   * Returns the type of events the meter is measuring.
-   */
-  def eventType = metric.getEventType
 
   /**
    * Returns the number of events which have been marked.

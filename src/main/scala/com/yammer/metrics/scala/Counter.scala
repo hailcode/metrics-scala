@@ -3,7 +3,7 @@ package com.yammer.metrics.scala
 /**
  * A Scala façade class for Counter.
  */
-class Counter(metric: com.yammer.metrics.core.Counter) {
+class Counter(metric: com.yammer.metrics.Counter) {
 
   /**
    * Increments the counter by delta.
@@ -23,9 +23,4 @@ class Counter(metric: com.yammer.metrics.core.Counter) {
    * Returns the current count.
    */
   def count = metric.getCount
-
-  /**
-   * Resets the counter to 0.
-   */
-  def clear() { metric.clear() }
 }
